@@ -5,8 +5,18 @@ async function parseData() {
   
 }
 
-function sum(acc, num) {
-  return acc + num;
+function sum(arr) {
+  return arr.reduce((acc, num) => {
+    return acc + num;
+  });
+}
+
+function avg(arr) {
+  return (sum(arr) / arr.length).toFixed(2);
+}
+
+function percentage(num, den) {
+  return ((num / den) * 100).toFixed(2);
 }
 
 async function main() {
@@ -30,13 +40,30 @@ async function main() {
     count++;
   }
 
-  const testedTotal = tested.reduce(sum, 0);
-  const positiveTotal = positive.reduce(sum, 0);
+  const testedTotal = sum(tested);
+  const positiveTotal = sum(positive);
   
-  const avgTested = testedTotal / tested.length;
-  const percentagePositive = ((positiveTotal / testedTotal) * 100).toFixed(2);
-  console.log(`\nPositive: ${positiveTotal}\nTested: ${testedTotal}`);
-  console.log(`\nMost Tested: ${mostTested} on ${mostTestedDate}\nAverage Tested: ${avgTested}\nPrecentage Positive: ${percentagePositive}\n`)
+  const avgTested = avg(tested);
+  const percentagePositive = percentage(positiveTotal, testedTotal);
+  
+  const testedTwoWeeksAgo = tested.slice(tested.length - 21, tested.length - 14);
+  const testedWeekAndAHalf = tested.slice(tested.length - 17, tested.length - 10);
+  const testedLastWeek = tested.slice(tested.length - 14, tested.length - 7);
+  const testedHalfAWeek = tested.slice(tested.length - 11, tested.length - 4);
+  const testedThisWeek = tested.slice(tested.length - 7, tested.length);
+
+  console.log(`\nPositive: ${positiveTotal}`);
+  console.log(`Tested: ${testedTotal}`);
+
+  console.log(`\nMost Tested: ${mostTested} on ${mostTestedDate}`);
+  console.log(`Average Tested: ${avgTested}`);
+  console.log(`Precentage Positive: ${percentagePositive}`);
+  
+  console.log(`\nAverage two weeks ago: ${avg(testedTwoWeeksAgo)}`);
+  console.log(`Average week and a half ago: ${avg(testedWeekAndAHalf)}`);
+  console.log(`Average last week: ${avg(testedLastWeek)}`);
+  console.log(`Average half a week ago: ${avg(testedHalfAWeek)}`);
+  console.log(`Average this week: ${avg(testedThisWeek)}\n`);
 }
 
 main().catch(e => console.error(e));
