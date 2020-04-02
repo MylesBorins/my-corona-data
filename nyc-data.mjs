@@ -1,30 +1,42 @@
 import { createReadStream } from 'fs';
 import parse from 'csv-parse';
 
+async function parseData() {
+  
+}
+
+function sum(acc, num) {
+  return acc + num;
+}
+
 async function main() {
   const csvPath = await import.meta.resolve('./coronavirus-data/testing.csv');
   const readStream = createReadStream(new URL(csvPath));
   const parser = readStream.pipe(parse());
-  let tested = 0;
-  let positive = 0;
   let mostTested = 0;
   let mostTestedDate = '';
-  let avgTested = 0;
   let count = 0;
+  const tested = [];
+  const positive = [];
   for await (const record of parser) {
     if (count !== 0) {
-      let numtested = Number(record[2]);
-      tested += numtested;
-      positive += Number(record[3]);
-      if (numtested > mostTested) {
-        mostTested = numtested;
+      tested.push(Number(record[2]));
+      positive.push(Number(record[3]))
+      if (tested[count - 1] > mostTested) {
+        mostTested = tested[count - 1];
         mostTestedDate = record[1];
       }
     }
     count++;
   }
-  avgTested = tested / (count - 1);
-  console.log(`\nPositive: ${positive}\nTested: ${tested}\n\nMost Tested: ${mostTested} on ${mostTestedDate}\nAverage Tested: ${avgTested}\n`);
+
+  const testedTotal = tested.reduce(sum, 0);
+  const positiveTotal = positive.reduce(sum, 0);
+  
+  const avgTested = testedTotal / tested.length;
+  const percentagePositive = ((positiveTotal / testedTotal) * 100).toFixed(2);
+  console.log(`\nPositive: ${positiveTotal}\nTested: ${testedTotal}`);
+  console.log(`\nMost Tested: ${mostTested} on ${mostTestedDate}\nAverage Tested: ${avgTested}\nPrecentage Positive: ${percentagePositive}\n`)
 }
 
 main().catch(e => console.error(e));
