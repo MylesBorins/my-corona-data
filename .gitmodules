@@ -1,0 +1,3 @@
+[submodule "coronavirus-data"]
+	path = coronavirus-data
+	url = https://github.com/nychealth/coronavirus-data.git
