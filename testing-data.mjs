@@ -1,8 +1,8 @@
-import { getTestingData } from './lib/data.mjs';
+import { getData } from './lib/data.mjs';
 import { sum, average, percentage } from './lib/math.mjs';
 
 async function main() {
-  const data = await getTestingData();
+  const data = await getData();
   
   const tested = [];
   const positive = [];
