@@ -4,7 +4,7 @@
   "description": "Just looking into data",
   "main": "index.js",
   "scripts": {
-    "start": "node --experimental-import-meta-resolve testing-data.mjs",
+    "start": "node --experimental-import-meta-resolve index.mjs",
     "update-subtree": "git subtree pull --prefix third_party/coronavirus-data https://github.com/nychealth/coronavirus-data master --squash",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
