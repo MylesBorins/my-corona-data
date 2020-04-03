@@ -20,7 +20,7 @@ function percentage(num, den) {
 }
 
 async function main() {
-  const csvPath = await import.meta.resolve('./coronavirus-data/testing.csv');
+  const csvPath = await import.meta.resolve('./third_party/coronavirus-data/testing.csv');
   const readStream = createReadStream(new URL(csvPath));
   const parser = readStream.pipe(parse());
   let mostTested = 0;
