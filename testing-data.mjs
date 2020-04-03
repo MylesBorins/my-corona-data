@@ -1,8 +1,8 @@
-import { parseData } from './lib/parse-data.mjs';
+import { getTestingData } from './lib/data.mjs';
 import { sum, average, percentage } from './lib/math.mjs';
 
 async function main() {
-  const data = await parseData();
+  const data = await getTestingData();
   
   const tested = [];
   const positive = [];
