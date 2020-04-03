@@ -1,4 +1,4 @@
-import { getData } from './lib/util.mjs';
+import { createWindows, getData } from './lib/util.mjs';
 import { sum, average, percentage } from './lib/math.mjs';
 
 function sanitize(data) {
@@ -34,31 +34,6 @@ function sanitize(data) {
   ];
 }
 
-function print(data) {
-  const {
-    hospitalizedTotal,
-    deathTotal,
-    // averageTested,
-    // percentagePositive,
-    // mostTested,
-    // mostTestedDate,
-    // testingWindows
-  } = data;
-  console.log(`Hospitalized: ${hospitalizedTotal}`);
-  console.log(`Deaths: ${deathTotal}`);
-  console.log();
-  // console.log(`Most Tested: ${mostTested} on ${mostTestedDate}`);
-  // console.log(`Average Tested: ${averageTested}`);
-  // console.log(`Precentage Positive: ${percentagePositive}`);
-  // console.log();
-  // console.log(`Average tested two weeks ago: ${average(testingWindows[0])}`);
-  // console.log(`Average tested week and a half ago: ${average(testingWindows[1])}`);
-  // console.log(`Average tested last week: ${average(testingWindows[2])}`);
-  // console.log(`Average tested half a week ago: ${average(testingWindows[3])}`);
-  // console.log(`Average tested this week: ${average(testingWindows[4])}`);
-  // console.log();
-}
-
 async function main() {
   const [
     hospitalized,
@@ -72,10 +47,32 @@ async function main() {
   const hospitalizedTotal = sum(hospitalized);
   const deathTotal = sum(deaths);
   
-  print({
-    hospitalizedTotal,
-    deathTotal
-  })
+  const averageHospitalized = average(hospitalized);
+  const averageDeaths = average(deaths);
+  
+  const hospitalizedWindows = createWindows(hospitalized);
+  const deathsWindows = createWindows(deaths);
+  
+  console.log(`Hospitalized: ${hospitalizedTotal}`);
+  console.log(`Deaths: ${deathTotal}`);
+  console.log();
+  console.log(`Most Hospitalized: ${mostHospitalized} on ${mostHospitalizedDate}`);
+  console.log(`Average Hospitalized: ${averageHospitalized}`);
+  console.log();
+  console.log(`Most Deaths: ${mostDeaths} on ${mostDeathsDate}`);
+  console.log(`Average Deaths: ${averageDeaths}`);
+  console.log();
+  console.log(`Average daily hospitalizations two weeks ago: ${average(hospitalizedWindows[0])}`);
+  console.log(`Average daily hospitalizations week and a half ago: ${average(hospitalizedWindows[1])}`);
+  console.log(`Average daily hospitalizations last week: ${average(hospitalizedWindows[2])}`);
+  console.log(`Average daily hospitalizations half a week ago: ${average(hospitalizedWindows[3])}`);
+  console.log(`Average daily hospitalizations this week: ${average(hospitalizedWindows[4])}`);
+  console.log();
+  console.log(`Average daily death two weeks ago: ${average(deathsWindows[0])}`);
+  console.log(`Average daily death week and a half ago: ${average(deathsWindows[1])}`);
+  console.log(`Average daily death last week: ${average(deathsWindows[2])}`);
+  console.log(`Average daily death half a week ago: ${average(deathsWindows[3])}`);
+  console.log(`Average daily death this week: ${average(deathsWindows[4])}`);
 }
 
 main().catch(e => console.error(e));
