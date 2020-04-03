@@ -1,9 +1,7 @@
 import { getData } from './lib/data.mjs';
 import { sum, average, percentage } from './lib/math.mjs';
 
-async function main() {
-  const data = await getData();
-  
+function sanitize(data) {
   const tested = [];
   const positive = [];
   
@@ -18,6 +16,22 @@ async function main() {
     tested.push(day.tested);
     positive.push(day.positive);
   });
+
+  return [
+    tested,
+    positive,
+    mostTested,
+    mostTestedDate
+  ];
+}
+
+async function main() {
+  const [
+    tested,
+    positive,
+    mostTested,
+    mostTestedDate
+  ] = sanitize(await getData());
 
   const testedTotal = sum(tested);
   const positiveTotal = sum(positive);
