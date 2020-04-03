@@ -1,4 +1,4 @@
-import { createWindows, getData } from './lib/util.mjs';
+import { createWindows, getData, printWindows } from './lib/util.mjs';
 import { sum, average, percentage } from './lib/math.mjs';
 
 function sanitize(data) {
@@ -50,9 +50,6 @@ async function main() {
   const averagePositive = average(positive);
   const percentagePositive = percentage(positiveTotal, testedTotal);
 
-  const testingWindows = createWindows(tested);
-  const positiveWindows = createWindows(positive);
-
   console.log(`Tested: ${testedTotal}`);
   console.log(`Positive: ${positiveTotal}`);
   console.log();
@@ -64,17 +61,9 @@ async function main() {
   console.log();
   console.log(`Precentage Positive: ${percentagePositive}`);
   console.log();
-  console.log(`Average daily tested two weeks ago: ${average(testingWindows[0])}`);
-  console.log(`Average daily tested week and a half ago: ${average(testingWindows[1])}`);
-  console.log(`Average daily tested last week: ${average(testingWindows[2])}`);
-  console.log(`Average daily tested half a week ago: ${average(testingWindows[3])}`);
-  console.log(`Average daily tested this week: ${average(testingWindows[4])}`);
+  printWindows('daily tested', createWindows(tested));
   console.log();
-  console.log(`Average daily postive two weeks ago: ${average(positiveWindows[0])}`);
-  console.log(`Average daily postive week and a half ago: ${average(positiveWindows[1])}`);
-  console.log(`Average daily postive last week: ${average(positiveWindows[2])}`);
-  console.log(`Average daily postive half a week ago: ${average(positiveWindows[3])}`);
-  console.log(`Average daily postive this week: ${average(positiveWindows[4])}`);
+  printWindows('daily positive', createWindows(positive));
   console.log();
 }
 
