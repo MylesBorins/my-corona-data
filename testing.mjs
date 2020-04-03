@@ -49,19 +49,19 @@ async function main() {
   const averageTested = average(tested);
   const averagePositive = average(positive);
   const percentagePositive = percentage(positiveTotal, testedTotal);
-
-  console.log(`Tested: ${testedTotal}`);
-  console.log(`Positive: ${positiveTotal}`);
-  console.log();
-  console.log(`Most Tested: ${mostTested} on ${mostTestedDate}`);
-  console.log(`Average Tested: ${averageTested}`);
-  console.log();
-  console.log(`Most Positive: ${mostPositive} on ${mostPositiveDate}`);
-  console.log(`Average Positive: ${averagePositive}`);
-  console.log();
+  console.log(`Total Tested: ${testedTotal}`);
+  console.log(`Total Positive: ${positiveTotal}`);
   console.log(`Precentage Positive: ${percentagePositive}`);
   console.log();
+  
+  console.log(`Average Tested: ${averageTested}`);
+  console.log(`Most Tested: ${mostTested} on ${mostTestedDate}`);
+  console.log();
   printWindows('daily tested', createWindows(tested));
+  console.log();
+
+  console.log(`Average Positive: ${averagePositive}`);
+  console.log(`Most Positive: ${mostPositive} on ${mostPositiveDate}`);
   console.log();
   printWindows('daily positive', createWindows(positive));
   console.log();

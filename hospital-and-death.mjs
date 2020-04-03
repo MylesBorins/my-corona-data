@@ -50,16 +50,16 @@ async function main() {
   const averageHospitalized = average(hospitalized);
   const averageDeaths = average(deaths);
   
-  console.log(`Hospitalized: ${hospitalizedTotal}`);
-  console.log(`Deaths: ${deathTotal}`);
+  console.log(`Total Hospitalized: ${hospitalizedTotal}`);
+  console.log(`Total Deaths: ${deathTotal}`);
   console.log();
   console.log(`Most Hospitalized: ${mostHospitalized} on ${mostHospitalizedDate}`);
   console.log(`Average Hospitalized: ${averageHospitalized}`);
   console.log();
+  printWindows('daily hospitalizations', createWindows(hospitalized));
+  console.log();
   console.log(`Most Deaths: ${mostDeaths} on ${mostDeathsDate}`);
   console.log(`Average Deaths: ${averageDeaths}`);
-  console.log();
-  printWindows('daily hospitalizations', createWindows(hospitalized));
   console.log();
   printWindows('daily deaths', createWindows(deaths));
 }
