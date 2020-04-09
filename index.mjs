@@ -4,4 +4,4 @@ async function main() {
   await import('./hospital-and-death.mjs');
 }
 
-main();
+main().catch(e => console.error(e));
