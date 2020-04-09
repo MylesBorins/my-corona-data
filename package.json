@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node --experimental-import-meta-resolve index.mjs",
+    "fetch-data": "curl -L https://health.data.ny.gov/resource/xdss-u53e.json > third_party/nys-doh-testing-data/testing.json",
     "update-subtree": "git subtree pull --prefix third_party/coronavirus-data https://github.com/nychealth/coronavirus-data master --squash",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
