@@ -4,7 +4,7 @@
   "description": "Just looking into data",
   "main": "index.js",
   "scripts": {
-    "start": "node --experimental-import-meta-resolve index.mjs",
+    "start": "node --experimental-modules index.mjs",
     "update-data": "npm run update-subtree && npm run fetch-state-data",
     "fetch-state-data": "curl -L https://health.data.ny.gov/resource/xdss-u53e.json > third_party/nys-doh-testing-data/testing.json",
     "update-subtree": "git subtree pull --prefix third_party/coronavirus-data https://github.com/nychealth/coronavirus-data master --squash",
