@@ -4,6 +4,10 @@ import { sum, average, percentage } from './lib/math.mjs';
 function sanitize(data) {
   const deaths = [];
   const hospitalized = [];
+  const positive = [];
+  
+  let mostPositive = 0;
+  let mostPositiveDate = '';
   
   let mostHospitalized = 0;
   let mostHospitalizedDate = '';
@@ -12,6 +16,10 @@ function sanitize(data) {
   let mostDeathsDate = '';
   
   data.forEach(day => {
+    if (day.positive > mostPositive) {
+      mostPositive = day.positive,
+      mostPositiveDate = day.date;
+    }
     if (day.deaths > mostDeaths) {
       mostDeaths = day.deaths;
       mostDeathsDate = day.date;
@@ -20,6 +28,7 @@ function sanitize(data) {
       mostHospitalized = day.hospitalized;
       mostHospitalizedDate = day.date;
     }
+    positive.push(day.positive);
     deaths.push(day.deaths);
     hospitalized.push(day.hospitalized)
   });
@@ -30,7 +39,10 @@ function sanitize(data) {
     mostHospitalizedDate,
     deaths,
     mostDeaths,
-    mostDeathsDate
+    mostDeathsDate,
+    positive,
+    mostPositive,
+    mostPositiveDate
   ];
 }
 
@@ -41,17 +53,28 @@ async function main() {
     mostHospitalizedDate,
     deaths,
     mostDeaths,
-    mostDeathsDate
+    mostDeathsDate,
+    positive,
+    mostPositive,
+    mostPositiveDate
   ] = sanitize(await getCityData());
   
+  const positiveTotal = sum(positive);
   const hospitalizedTotal = sum(hospitalized);
   const deathTotal = sum(deaths);
   
+  const averagePositive = average(positive);
   const averageHospitalized = average(hospitalized);
   const averageDeaths = average(deaths);
   
+  console.log(`Total Positive Tests: ${positiveTotal}`);
   console.log(`Total Hospitalized: ${hospitalizedTotal}`);
   console.log(`Total Deaths: ${deathTotal}`);
+  console.log();
+  console.log(`Most Positive Tests: ${mostPositive} on ${mostPositiveDate}`);
+  console.log(`Average Positive Tests: ${averagePositive}`);
+  console.log();
+  printWindows('daily positive tests', createWindows(positive));
   console.log();
   console.log(`Most Hospitalized: ${mostHospitalized} on ${mostHospitalizedDate}`);
   console.log(`Average Hospitalized: ${averageHospitalized}`);
