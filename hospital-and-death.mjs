@@ -1,4 +1,4 @@
-import { createWindows, getData, printWindows } from './lib/util.mjs';
+import { createWindows, getCityData, printWindows } from './lib/util.mjs';
 import { sum, average, percentage } from './lib/math.mjs';
 
 function sanitize(data) {
@@ -42,7 +42,7 @@ async function main() {
     deaths,
     mostDeaths,
     mostDeathsDate
-  ] = sanitize(await getData());
+  ] = sanitize(await getCityData());
   
   const hospitalizedTotal = sum(hospitalized);
   const deathTotal = sum(deaths);
