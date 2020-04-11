@@ -15,7 +15,14 @@ function sanitize(data) {
   let mostDeaths = 0;
   let mostDeathsDate = '';
   
+  let mostRecentDate;
+  
   data.forEach(day => {
+    if (!mostRecentDate) mostRecentDate = day.date;
+    else if (new Date(mostRecentDate) < new Date(day.date)) {
+      mostRecentDate = day.date;
+    }
+    
     if (day.positive > mostPositive) {
       mostPositive = day.positive,
       mostPositiveDate = day.date;
@@ -42,7 +49,8 @@ function sanitize(data) {
     mostDeathsDate,
     positive,
     mostPositive,
-    mostPositiveDate
+    mostPositiveDate,
+    mostRecentDate
   ];
 }
 
@@ -56,7 +64,8 @@ async function main() {
     mostDeathsDate,
     positive,
     mostPositive,
-    mostPositiveDate
+    mostPositiveDate,
+    mostRecentDate
   ] = sanitize(await getCityData());
   
   const positiveTotal = sum(positive);
@@ -68,6 +77,7 @@ async function main() {
   const averageDeaths = average(deaths);
 
   console.log('NYC Corona Data\n');
+  console.log(`Data as of: ${new Date(mostRecentDate).toDateString()}\n`);
   console.log(`Total Positive Tests: ${positiveTotal}`);
   console.log(`Total Hospitalized: ${hospitalizedTotal}`);
   console.log(`Total Deaths: ${deathTotal}`);
