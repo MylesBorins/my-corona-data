@@ -60,7 +60,7 @@ counties.forEach(county => {
 positives = positives.reverse();
 totalTested = totalTested.reverse();
 
-console.log('New York City Data\n')
+console.log('New York State Data\n')
 console.log(`Data as of: ${new Date(nyc[0].test_date).toDateString()}\n`)
 console.log(`Total tests: ${total}`);
 console.log(`Total positive: ${positive}\n`);
