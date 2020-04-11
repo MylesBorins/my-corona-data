@@ -66,7 +66,8 @@ async function main() {
   const averagePositive = average(positive);
   const averageHospitalized = average(hospitalized);
   const averageDeaths = average(deaths);
-  
+
+  console.log('NYC Corona Data\n');
   console.log(`Total Positive Tests: ${positiveTotal}`);
   console.log(`Total Hospitalized: ${hospitalizedTotal}`);
   console.log(`Total Deaths: ${deathTotal}`);
