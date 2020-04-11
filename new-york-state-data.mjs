@@ -1,3 +1,4 @@
+import { createWindows, printWindows } from './lib/util.mjs';
 import { createRequire } from 'module';
 
 const require = createRequire(import.meta.url);
@@ -38,7 +39,33 @@ nyc.forEach(item => {
   countyOverTime[item.county].totalTests.push(item.total_number_of_tests);
 });
 
+let positives = [];
+let totalTested = [];
+
+counties.forEach(county => {
+  countyOverTime[county].positives.forEach((count, i) => {
+    if (!positives[i]) positives[i] = Number(count);
+    else {
+      positives[i] += Number(count)
+    };
+  });
+  countyOverTime[county].totalTests.forEach((count, i) => {
+    if (!totalTested[i]) totalTested[i] = Number(count);
+    else {
+      totalTested[i] += Number(count)
+    };
+  })
+});
+
+positives = positives.reverse();
+totalTested = totalTested.reverse();
+
 console.log('New York City Data\n')
 console.log(`Data as of: ${new Date(nyc[0].test_date).toDateString()}\n`)
 console.log(`Total tests: ${total}`);
 console.log(`Total positive: ${positive}\n`);
+
+printWindows('daily total tests', createWindows(totalTested, 15), 15);
+console.log();
+printWindows('daily positive tests', createWindows(positives, 15), 15);
+console.log();
