@@ -15,7 +15,7 @@ limitations under the License.
 */
 
 import { createWindows, getCityData, printWindows } from './lib/util.mjs';
-import { sum, average, percentage } from './lib/math.mjs';
+import { sum, average } from './lib/math.mjs';
 
 function sanitize(data) {
   const deaths = [];
@@ -53,7 +53,7 @@ function sanitize(data) {
     }
     positive.push(day.positive);
     deaths.push(day.deaths);
-    hospitalized.push(day.hospitalized)
+    hospitalized.push(day.hospitalized);
   });
 
   return [

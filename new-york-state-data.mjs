@@ -62,22 +62,22 @@ counties.forEach(county => {
   countyOverTime[county].positives.forEach((count, i) => {
     if (!positives[i]) positives[i] = Number(count);
     else {
-      positives[i] += Number(count)
-    };
+      positives[i] += Number(count);
+    }
   });
   countyOverTime[county].totalTests.forEach((count, i) => {
     if (!totalTested[i]) totalTested[i] = Number(count);
     else {
-      totalTested[i] += Number(count)
-    };
-  })
+      totalTested[i] += Number(count);
+    }
+  });
 });
 
 positives = positives.reverse();
 totalTested = totalTested.reverse();
 
-console.log('New York State Data\n')
-console.log(`Data as of: ${new Date(nyc[0].test_date).toDateString()}\n`)
+console.log('New York State Data\n');
+console.log(`Data as of: ${new Date(nyc[0].test_date).toDateString()}\n`);
 console.log(`Total tests: ${total}`);
 console.log(`Total positive: ${positive}\n`);
 
