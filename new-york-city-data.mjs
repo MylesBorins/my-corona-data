@@ -14,7 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import { createWindows, getCityData, printWindows } from './lib/util.mjs';
+import { getCityData } from './lib/data.mjs';
+import { createWindows, printWindows } from './lib/util.mjs';
 import { sum, average } from './lib/math.mjs';
 
 function sanitize(data) {

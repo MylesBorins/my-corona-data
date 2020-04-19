@@ -14,25 +14,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import { createWindows, printWindows } from './lib/util.mjs';
-import { createRequire } from 'module';
+import { getStateData } from './lib/data.mjs';
+import { counties, createWindows, printWindows } from './lib/util.mjs';
 
-const require = createRequire(import.meta.url);
-
-const data = require('./third_party/nys-doh-testing-data/testing.json');
-
-const counties = [
-  'New York',
-  'Kings',
-  'Queens',
-  'Bronx',
-  'Richmond'
-];
-
-const nyc = data.reduce((acc, item) => {
-  if (counties.includes(item.county)) acc.push(item);
-  return acc;
-}, []);
+const nyc = getStateData();
 
 let total = 0;
 let positive = 0;
