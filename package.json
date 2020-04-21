@@ -16,7 +16,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "csv-parse": "^4.8.8",
-    "proposal-temporal": "github:sffc/proposal-temporal#npmignore"
+    "proposal-temporal": "github:tc39/proposal-temporal"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
