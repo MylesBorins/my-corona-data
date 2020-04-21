@@ -15,7 +15,7 @@ limitations under the License.
 */
 
 import { getCityData } from './lib/data.mjs';
-import { createWindows, printWindows } from './lib/util.mjs';
+import { LOCALE, createWindows, printWindows } from './lib/util.mjs';
 import { sum, average } from './lib/math.mjs';
 
 function sanitize(data) {
@@ -36,7 +36,7 @@ function sanitize(data) {
   
   data.forEach(day => {
     if (!mostRecentDate) mostRecentDate = day.date;
-    else if (new Date(mostRecentDate) < new Date(day.date)) {
+    else if (mostRecentDate < day.date) {
       mostRecentDate = day.date;
     }
     
@@ -94,22 +94,22 @@ async function main() {
   const averageDeaths = average(deaths);
 
   console.log('NYC Corona Data\n');
-  console.log(`Data as of: ${new Date(mostRecentDate).toDateString()}\n`);
+  console.log(`Data as of: ${mostRecentDate.toLocaleString(LOCALE)}\n`);
   console.log(`Total Positive Tests: ${positiveTotal}`);
   console.log(`Total Hospitalized: ${hospitalizedTotal}`);
   console.log(`Total Deaths: ${deathTotal}`);
   console.log();
-  console.log(`Most Positive Tests: ${mostPositive} on ${mostPositiveDate}`);
+  console.log(`Most Positive Tests: ${mostPositive} on ${mostPositiveDate.toLocaleString(LOCALE)}`);
   console.log(`Average Positive Tests: ${averagePositive}`);
   console.log();
   printWindows('daily positive tests', createWindows(positive));
   console.log();
-  console.log(`Most Hospitalized: ${mostHospitalized} on ${mostHospitalizedDate}`);
+  console.log(`Most Hospitalized: ${mostHospitalized} on ${mostHospitalizedDate.toLocaleString(LOCALE)}`);
   console.log(`Average Hospitalized: ${averageHospitalized}`);
   console.log();
   printWindows('daily hospitalizations', createWindows(hospitalized));
   console.log();
-  console.log(`Most Deaths: ${mostDeaths} on ${mostDeathsDate}`);
+  console.log(`Most Deaths: ${mostDeaths} on ${mostDeathsDate.toLocaleString(LOCALE)}`);
   console.log(`Average Deaths: ${averageDeaths}`);
   console.log();
   printWindows('daily deaths', createWindows(deaths));

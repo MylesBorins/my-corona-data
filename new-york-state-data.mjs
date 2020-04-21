@@ -15,7 +15,7 @@ limitations under the License.
 */
 
 import { getStateData } from './lib/data.mjs';
-import { counties, createWindows, printWindows } from './lib/util.mjs';
+import { LOCALE, Temporal, counties, createWindows, printWindows } from './lib/util.mjs';
 
 const nyc = getStateData();
 
@@ -62,7 +62,7 @@ positives = positives.reverse();
 totalTested = totalTested.reverse();
 
 console.log('New York State Data\n');
-console.log(`Data as of: ${new Date(nyc[0].test_date).toDateString()}\n`);
+console.log(`Data as of: ${Temporal.DateTime.from(nyc[0].test_date).getDate().toLocaleString(LOCALE)}\n`);
 console.log(`Total tests: ${total}`);
 console.log(`Total positive: ${positive}\n`);
 
