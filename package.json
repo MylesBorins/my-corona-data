@@ -6,8 +6,7 @@
   "scripts": {
     "start": "node --experimental-modules index.mjs",
     "update-data": "npm run update-subtree && npm run fetch-state-data",
-    "fetch-state-data": "curl -L https://health.data.ny.gov/resource/xdss-u53e.json > third_party/nys-doh-testing-data/testing.json && npm run commit-state-date",
-    "commit-state-date": "git add . && git commit -m \"update state data\"",
+    "fetch-state-data": "./scripts/update-state-data.sh",
     "update-subtree": "git subtree pull --prefix third_party/coronavirus-data https://github.com/nychealth/coronavirus-data master --squash",
     "test": "npm run lint",
     "lint": "eslint *.mjs lib/*.mjs",
