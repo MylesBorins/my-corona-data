@@ -15,27 +15,24 @@ limitations under the License.
 */
 
 import { getStateData } from './lib/data.mjs';
-import { counties, createWindows, printWindows } from './lib/util.mjs';
+import { createWindows, printWindows } from './lib/util.mjs';
+import { sum } from './lib/math.mjs';
 
 const nyc = getStateData();
 
 let total = 0;
 let positive = 0;
+const countyOverTime = {};
 
-for (let i = 0; i < 5; i++) {
-  total += Number(nyc[i].cumulative_number_of_tests);
-  positive += Number(nyc[i].cumulative_number_of_positives);
-}
-
-const countyOverTime = counties.reduce((acc, county) => {
-  acc[county] = {
+function makeCounty() {
+  return {
     positives: [],
     totalTests: []
   };
-  return acc;
-}, {});
+}
 
 nyc.forEach(item => {
+  if (!countyOverTime[item.county]) countyOverTime[item.county] = makeCounty();
   countyOverTime[item.county].positives.push(item.new_positives);
   countyOverTime[item.county].totalTests.push(item.total_number_of_tests);
 });
@@ -43,7 +40,7 @@ nyc.forEach(item => {
 let positives = [];
 let totalTested = [];
 
-counties.forEach(county => {
+Object.keys(countyOverTime).forEach(county => {
   countyOverTime[county].positives.forEach((count, i) => {
     if (!positives[i]) positives[i] = Number(count);
     else {
@@ -58,15 +55,12 @@ counties.forEach(county => {
   });
 });
 
-positives = positives.reverse();
-totalTested = totalTested.reverse();
-
 console.log('New York State Data\n');
 console.log(`Data as of: ${new Date(nyc[0].test_date).toDateString()}\n`);
-console.log(`Total tests: ${total}`);
-console.log(`Total positive: ${positive}\n`);
+console.log(`Total tests: ${sum(totalTested)}`);
+console.log(`Total positive: ${sum(positives)}\n`);
 
-printWindows('daily total tests', createWindows(totalTested, 15), 15);
+printWindows('daily total tests', createWindows(totalTested));
 console.log();
-printWindows('daily positive tests', createWindows(positives, 15), 15);
+printWindows('daily positive tests', createWindows(positives));
 console.log();
