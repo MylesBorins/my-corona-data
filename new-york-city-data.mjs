@@ -71,48 +71,45 @@ function sanitize(data) {
   ];
 }
 
-async function main() {
-  const [
-    hospitalized,
-    mostHospitalized,
-    mostHospitalizedDate,
-    deaths,
-    mostDeaths,
-    mostDeathsDate,
-    positive,
-    mostPositive,
-    mostPositiveDate,
-    mostRecentDate
-  ] = sanitize(await getCityData());
-  
-  const positiveTotal = sum(positive);
-  const hospitalizedTotal = sum(hospitalized);
-  const deathTotal = sum(deaths);
-  
-  const averagePositive = average(positive);
-  const averageHospitalized = average(hospitalized);
-  const averageDeaths = average(deaths);
 
-  console.log('NYC Corona Data\n');
-  console.log(`Data as of: ${new Date(mostRecentDate).toDateString()}\n`);
-  console.log(`Total Positive Tests: ${positiveTotal}`);
-  console.log(`Total Hospitalized: ${hospitalizedTotal}`);
-  console.log(`Total Deaths: ${deathTotal}`);
-  console.log();
-  console.log(`Most Positive Tests: ${mostPositive} on ${mostPositiveDate}`);
-  console.log(`Average Positive Tests: ${averagePositive}`);
-  console.log();
-  printWindows('daily positive tests', createWindows(positive));
-  console.log();
-  console.log(`Most Hospitalized: ${mostHospitalized} on ${mostHospitalizedDate}`);
-  console.log(`Average Hospitalized: ${averageHospitalized}`);
-  console.log();
-  printWindows('daily hospitalizations', createWindows(hospitalized));
-  console.log();
-  console.log(`Most Deaths: ${mostDeaths} on ${mostDeathsDate}`);
-  console.log(`Average Deaths: ${averageDeaths}`);
-  console.log();
-  printWindows('daily deaths', createWindows(deaths));
-}
+const [
+  hospitalized,
+  mostHospitalized,
+  mostHospitalizedDate,
+  deaths,
+  mostDeaths,
+  mostDeathsDate,
+  positive,
+  mostPositive,
+  mostPositiveDate,
+  mostRecentDate
+] = sanitize(await getCityData());
 
-main().catch(e => console.error(e));
+const positiveTotal = sum(positive);
+const hospitalizedTotal = sum(hospitalized);
+const deathTotal = sum(deaths);
+
+const averagePositive = average(positive);
+const averageHospitalized = average(hospitalized);
+const averageDeaths = average(deaths);
+
+console.log('NYC Corona Data\n');
+console.log(`Data as of: ${new Date(mostRecentDate).toDateString()}\n`);
+console.log(`Total Positive Tests: ${positiveTotal}`);
+console.log(`Total Hospitalized: ${hospitalizedTotal}`);
+console.log(`Total Deaths: ${deathTotal}`);
+console.log();
+console.log(`Most Positive Tests: ${mostPositive} on ${mostPositiveDate}`);
+console.log(`Average Positive Tests: ${averagePositive}`);
+console.log();
+printWindows('daily positive tests', createWindows(positive));
+console.log();
+console.log(`Most Hospitalized: ${mostHospitalized} on ${mostHospitalizedDate}`);
+console.log(`Average Hospitalized: ${averageHospitalized}`);
+console.log();
+printWindows('daily hospitalizations', createWindows(hospitalized));
+console.log();
+console.log(`Most Deaths: ${mostDeaths} on ${mostDeathsDate}`);
+console.log(`Average Deaths: ${averageDeaths}`);
+console.log();
+printWindows('daily deaths', createWindows(deaths));
