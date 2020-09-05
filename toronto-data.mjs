@@ -29,15 +29,13 @@ function sanitize(data) {
   // }
   
   data.forEach(covidCase => {
-    if (covidCase.Classification === 'CONFIRMED') {
-      const episodeDate = covidCase['Episode Date'];
-      if (!dates[episodeDate]) {
-        dates[episodeDate] = 1;
-      } else {
-        dates[episodeDate] += 1;
-      }
-      total += 1;
+    const episodeDate = covidCase['Episode Date'];
+    if (!dates[episodeDate]) {
+      dates[episodeDate] = 1;
+    } else {
+      dates[episodeDate] += 1;
     }
+    total += 1;
   });
   
   return {
