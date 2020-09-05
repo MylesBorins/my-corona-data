@@ -10,10 +10,7 @@ const query = '$where=county==%27New%20York%27%20OR%20' +
 
 const outputPath = '../third_party/nys-doh-testing-data/testing.json';
 
-async function main() {
-  const req = await fetch(`${baseUrl}?${query}`);
-  const text = await req.text();
-  await writeFile(new URL(outputPath, import.meta.url), text);
-}
+const req = await fetch(`${baseUrl}?${query}`);
+const text = await req.text();
+await writeFile(new URL(outputPath, import.meta.url), text);
 
-main().catch(e => console.error(e))
