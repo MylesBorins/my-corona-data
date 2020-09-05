@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import { getCityData } from './lib/data.mjs';
+import { getNYCityData } from './lib/data.mjs';
 import { createWindows, printWindows } from './lib/util.mjs';
 import { sum, average } from './lib/math.mjs';
 
@@ -83,7 +83,7 @@ const [
   mostPositive,
   mostPositiveDate,
   mostRecentDate
-] = sanitize(await getCityData());
+] = sanitize(await getNYCityData());
 
 const positiveTotal = sum(positive);
 const hospitalizedTotal = sum(hospitalized);

@@ -14,11 +14,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import { getStateData } from './lib/data.mjs';
+import { getNYStateData } from './lib/data.mjs';
 import { createWindows, printWindows } from './lib/util.mjs';
 import { sum } from './lib/math.mjs';
 
-const nyc = getStateData();
+const nyc = getNYStateData();
 
 let total = 0;
 let positive = 0;
