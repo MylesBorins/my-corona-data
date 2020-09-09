@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node --experimental-modules index.mjs",
     "update-data": "echo update-subtree fetch-toronto-data fetch-state-data | xargs -n1 npm run",
-    "fetch-toronto-data": "curl -L https://ckan0.cf.opendata.inter.prod-toronto.ca/download_resource/e5bf35bc-e681-43da-b2ce-0242d00922ad?format=json > third_party/toronto-data/toronto-covid-cases.json && git diff-index --quiet HEAD || git commit -m 'data: update toronto data'",
+    "fetch-toronto-data": "curl -L https://ckan0.cf.opendata.inter.prod-toronto.ca/download_resource/e5bf35bc-e681-43da-b2ce-0242d00922ad?format=json > third_party/toronto-data/toronto-covid-cases.json && git add -A && git diff-index --quiet HEAD || git commit -m 'data: update toronto data'",
     "fetch-state-data": "node ./scripts/update-state-data.mjs && git add -A && git diff-index --quiet HEAD || git commit -m 'data: update ny state data'",
     "update-subtree": "git subtree pull --prefix third_party/coronavirus-data https://github.com/nychealth/coronavirus-data master --squash -m \"data: update ny city data\"",
     "test": "npm run lint",
