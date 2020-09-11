@@ -38,9 +38,15 @@ function sanitize(data) {
     total += 1;
   });
   
+  const sortedDates = Object.entries(dates).sort((a,b) => {
+    const dateOne = new Date(a[0]);
+    const dateTwo = new Date(b[0]);
+    return dateOne - dateTwo;
+  });
+  
   return {
     total,
-    dates
+    dates: Object.fromEntries(sortedDates)
   };
 }
 
@@ -50,4 +56,4 @@ const {
 } = sanitize(getTorontoData());
 
 console.log(total);
-console.log(dates);
+console.log(dates)
