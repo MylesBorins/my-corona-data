@@ -50,5 +50,13 @@ const {
   dates
 } = sanitize(getTorontoData());
 
-console.log(total);
-console.log(dates);
+let latestDate = Object.keys(dates);
+latestDate = latestDate[latestDate.length - 1];
+const positives = Object.values(dates);
+
+console.log('Toronto City Data\n');
+console.log(`Data as of: ${new Date(latestDate + ' 12:00').toDateString()}\n`);
+console.log(`Total postive cases: ${total}\n`);
+
+printWindows('daily positive tests', createWindows(positives, 120), 120);
+console.log();
