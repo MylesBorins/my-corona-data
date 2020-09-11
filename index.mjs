@@ -16,3 +16,4 @@ limitations under the License.
 
 await import('./new-york-state-data.mjs');
 await import('./new-york-city-data.mjs');
+await import('./toronto-data.mjs');
