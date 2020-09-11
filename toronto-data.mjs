@@ -30,11 +30,8 @@ function sanitize(data) {
   
   data.forEach(covidCase => {
     const episodeDate = covidCase['Episode Date'];
-    if (!dates[episodeDate]) {
-      dates[episodeDate] = 1;
-    } else {
-      dates[episodeDate] += 1;
-    }
+    if (!dates[episodeDate]) dates[episodeDate] = 1;
+    else dates[episodeDate] += 1;
     total += 1;
   });
   
