@@ -13,7 +13,7 @@ function print () {
   console.log('Manually collected Toronto Data\n');
   console.log(`Data as of: ${new Date(latestDate + ' 12:00').toDateString()}\n`);
 
-  printWindows('daily positive tests', createWindows(positives, 30), 30);
+  printWindows('daily positive tests', createWindows(positives, 30, 5), 30, 5);
   console.log();
 }
 
