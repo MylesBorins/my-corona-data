@@ -55,12 +55,20 @@ Object.keys(countyOverTime).forEach(county => {
   });
 });
 
-console.log('New York State Data\n');
-console.log(`Data as of: ${new Date(nyc[0].test_date).toDateString()}\n`);
-console.log(`Total tests: ${sum(totalTested)}`);
-console.log(`Total positive: ${sum(positives)}\n`);
+function print() {
+  console.log('New York State Data\n');
+  console.log(`Data as of: ${new Date(nyc[0].test_date).toDateString()}\n`);
+  console.log(`Total tests: ${sum(totalTested)}`);
+  console.log(`Total positive: ${sum(positives)}\n`);
 
-printWindows('daily total tests', createWindows(totalTested));
-console.log();
-printWindows('daily positive tests', createWindows(positives));
-console.log();
+  printWindows('daily total tests', createWindows(totalTested));
+  console.log();
+  printWindows('daily positive tests', createWindows(positives));
+  console.log(); 
+}
+
+export {
+  positives,
+  totalTested,
+  print
+};

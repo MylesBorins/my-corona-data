@@ -14,6 +14,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-await import('./new-york-state-data.mjs');
-await import('./new-york-city-data.mjs');
-await import('./toronto-data.mjs');
+import { print as printNYState } from './new-york-state-data.mjs';
+import { print as printNYCity } from './new-york-city-data.mjs';
+import { print as printToronto } from './toronto-data.mjs';
+import { print as printTorontoManual } from './toronto-data-manual.mjs';
+
+printNYState();
+printNYCity();
+printToronto();
+printTorontoManual();
