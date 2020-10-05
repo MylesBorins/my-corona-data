@@ -1,5 +1,5 @@
 import { getManualTorontoData } from './lib/data.mjs';
-import { createWindows, printWindows } from './lib/util.mjs';
+import { runningAverage, printAverages } from './lib/util.mjs';
 import { sum } from './lib/math.mjs';
 
 const dates = getManualTorontoData();
@@ -13,7 +13,7 @@ function print () {
   console.log('Manually collected Toronto Data\n');
   console.log(`Data as of: ${new Date(latestDate + ' 12:00').toDateString()}\n`);
 
-  printWindows('daily positive tests', createWindows(positives, 30, 5), 30, 5);
+  printAverages('postitive tests', runningAverage(dates))
   console.log();
 }
 
@@ -22,3 +22,4 @@ export {
   dates,
   print
 };
+
