@@ -1,19 +1,16 @@
 #  My Corona Data
 
 This is a small local dashboard I've been using to track coronavirus + COVID-19
-statistics in NYC, where I live.
+statistics in NYC and Toronto, the two cities I call home.
 
 ## Where is the data from?
 
-This repo vendors both state and city data.
+This repo vendors both state and city data for NYC.
 
-The city data can be found at `third_party/coronavirus-data` which is a git subtree
-tracking https://github.com/nychealth/coronavirus-data
+For Toronto data I am using the published Toronto data, and am manually collecting data
+for the @TOPublicHealth on twitter.
 
-The state data can be found at `third_party/nys-doh-testing-data` which is an archive
-of JSON data fetched regularly with the command `curl -L https://health.data.ny.gov/resource/xdss-u53e.json > third_party/nys-doh-testing-data/testing.json`
-
-Both data source are regularly updated via `npm run update-data`
+Data sources are updated regularly.
 
 ## Are you a scientist?
 
