@@ -1,5 +1,5 @@
 import { getTorontoData } from './lib/data.mjs';
-import { createWindows, printWindows } from './lib/util.mjs';
+import { runningAverage, printAverages } from './lib/util.mjs';
 import { sum } from './lib/math.mjs';
 
 function sanitize(data) {
@@ -59,7 +59,10 @@ function print () {
   console.log(`Data as of: ${new Date(latestDate + ' 12:00').toDateString()}\n`);
   console.log(`Total postive cases: ${total}\n`);
 
-  printWindows('daily positive tests', createWindows(positives, 120), 120);
+  // printWindows('daily positive tests', createWindows(positives, 120), 120);
+  // console.log();
+  const averages = runningAverage(dates)
+  printAverages('postitive tests', averages.slice(averages.length - 30, averages.length))
   console.log();
 }
 
