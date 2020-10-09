@@ -1,6 +1,5 @@
 import { getManualTorontoData } from './lib/data.mjs';
 import { runningAverage, printAverages } from './lib/util.mjs';
-import { sum } from './lib/math.mjs';
 
 const dates = getManualTorontoData();
 
@@ -13,7 +12,7 @@ function print () {
   console.log('Manually collected Toronto Data\n');
   console.log(`Data as of: ${new Date(latestDate + ' 12:00').toDateString()}\n`);
 
-  printAverages('postitive tests', runningAverage(dates))
+  printAverages('postitive tests', runningAverage(dates));
   console.log();
 }
 

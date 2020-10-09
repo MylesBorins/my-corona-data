@@ -20,7 +20,8 @@
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {
-    "babel-eslint": "^10.1.0",
+    "@babel/eslint-parser": "^7.11.5",
+    "@babel/plugin-syntax-top-level-await": "^7.10.4",
     "eslint": "^7.5.0"
   }
 }

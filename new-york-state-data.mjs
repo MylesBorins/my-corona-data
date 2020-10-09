@@ -20,8 +20,6 @@ import { sum } from './lib/math.mjs';
 
 const nyc = getNYStateData();
 
-let total = 0;
-let positive = 0;
 const countyOverTime = {};
 
 function makeCounty() {
