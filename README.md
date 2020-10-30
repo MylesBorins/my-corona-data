@@ -6,6 +6,12 @@ Data are preliminary and subject to change. Information on this page will change
 The Health Department classifies the start of the outbreak in NYC as the date of the first laboratory-confirmed case, February 29, 2020.   
 
 ## Key notes  
+### Differences between City and State values
+Generally, the City and the State will almost never have the same numbers for the same metrics, though they report the same general trends. The reasons for this include:
+- Different data sources for different metrics
+- Different analytical and informatics processes
+- Different uses of event date or report date (see below)
+
 ### Report date versus date of event 
 Due to lags common with surveillance data, we receive reports of events (diagnoses, hospitalizations and deaths) that happened on past days. We publish trend data (e.g., case-hosp-death.csv) using date of event (date of diagnosis, date of hospitalization or date of death), not date of report.  
 
@@ -621,8 +627,9 @@ Indicators include:
 | Variable Name | Definition | Timeframe | 
 | -------------------|-----------------------------------------------------------------------|-----------:| 
 | DATE_OF_DEATH | Date of death | |          
-| CONFIRMED_DEATH | Count of confirmed deaths by date of death| Cumulative | 
-| PROBABLE_DEATH | Count of probable deaths by date of death | Cumulative | 
+| CONFIRMED_COUNT | Count of confirmed deaths by date of death| Daily | 
+| PROBABLE_COUNT | Count of probable deaths by date of death | Daily | 
+| INCOMPLETE | Used for display purposes only | N/A |  
 
 Because of delays in reporting, the most recent data may be incomplete. Data shown currently will be updated in the future as data on deaths are reported or updated.  
 
@@ -753,7 +760,7 @@ Indicators include:
 | Most recent (week 1) | Summary count of confirmed cases and  confirmed deaths| Most recent complete week |    
 | WEEK 2 | Summary count of confirmed cases and  confirmed deaths | Week 2 |    
 | WEEK 3 | Summary count of confirmed cases and  confirmed deaths | Week 3 |    
-| WEEK 3 | Summary count of confirmed cases and  confirmed deaths | Week 4 |    
+| WEEK 4 | Summary count of confirmed cases and  confirmed deaths | Week 4 |    
 
 
 ### recent/recent-4-week-by-modzcta.csv    
