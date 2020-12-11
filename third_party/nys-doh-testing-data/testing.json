@@ -281,6 +281,7 @@
 ,{"test_date":"2020-12-06T00:00:00.000","county":"Bronx","new_positives":"497","cumulative_number_of_positives":"67754","total_number_of_tests":"9573","cumulative_number_of_tests":"1363836"}
 ,{"test_date":"2020-12-07T00:00:00.000","county":"Bronx","new_positives":"691","cumulative_number_of_positives":"68445","total_number_of_tests":"11975","cumulative_number_of_tests":"1375811"}
 ,{"test_date":"2020-12-08T00:00:00.000","county":"Bronx","new_positives":"559","cumulative_number_of_positives":"69004","total_number_of_tests":"11463","cumulative_number_of_tests":"1387274"}
+,{"test_date":"2020-12-09T00:00:00.000","county":"Bronx","new_positives":"536","cumulative_number_of_positives":"69540","total_number_of_tests":"13004","cumulative_number_of_tests":"1400278"}
 ,{"test_date":"2020-03-01T00:00:00.000","county":"Kings","new_positives":"0","cumulative_number_of_positives":"0","total_number_of_tests":"0","cumulative_number_of_tests":"0"}
 ,{"test_date":"2020-03-02T00:00:00.000","county":"Kings","new_positives":"0","cumulative_number_of_positives":"0","total_number_of_tests":"0","cumulative_number_of_tests":"0"}
 ,{"test_date":"2020-03-03T00:00:00.000","county":"Kings","new_positives":"0","cumulative_number_of_positives":"0","total_number_of_tests":"2","cumulative_number_of_tests":"2"}
@@ -564,6 +565,7 @@
 ,{"test_date":"2020-12-06T00:00:00.000","county":"Kings","new_positives":"735","cumulative_number_of_positives":"95047","total_number_of_tests":"18400","cumulative_number_of_tests":"2502031"}
 ,{"test_date":"2020-12-07T00:00:00.000","county":"Kings","new_positives":"973","cumulative_number_of_positives":"96020","total_number_of_tests":"21118","cumulative_number_of_tests":"2523149"}
 ,{"test_date":"2020-12-08T00:00:00.000","county":"Kings","new_positives":"1073","cumulative_number_of_positives":"97093","total_number_of_tests":"27802","cumulative_number_of_tests":"2550951"}
+,{"test_date":"2020-12-09T00:00:00.000","county":"Kings","new_positives":"952","cumulative_number_of_positives":"98045","total_number_of_tests":"22420","cumulative_number_of_tests":"2573371"}
 ,{"test_date":"2020-03-01T00:00:00.000","county":"New York","new_positives":"0","cumulative_number_of_positives":"0","total_number_of_tests":"0","cumulative_number_of_tests":"0"}
 ,{"test_date":"2020-03-02T00:00:00.000","county":"New York","new_positives":"0","cumulative_number_of_positives":"0","total_number_of_tests":"0","cumulative_number_of_tests":"0"}
 ,{"test_date":"2020-03-03T00:00:00.000","county":"New York","new_positives":"0","cumulative_number_of_positives":"0","total_number_of_tests":"3","cumulative_number_of_tests":"3"}
@@ -847,6 +849,7 @@
 ,{"test_date":"2020-12-06T00:00:00.000","county":"New York","new_positives":"441","cumulative_number_of_positives":"48962","total_number_of_tests":"17668","cumulative_number_of_tests":"2138367"}
 ,{"test_date":"2020-12-07T00:00:00.000","county":"New York","new_positives":"410","cumulative_number_of_positives":"49372","total_number_of_tests":"14257","cumulative_number_of_tests":"2152624"}
 ,{"test_date":"2020-12-08T00:00:00.000","county":"New York","new_positives":"535","cumulative_number_of_positives":"49907","total_number_of_tests":"20681","cumulative_number_of_tests":"2173305"}
+,{"test_date":"2020-12-09T00:00:00.000","county":"New York","new_positives":"512","cumulative_number_of_positives":"50419","total_number_of_tests":"19269","cumulative_number_of_tests":"2192574"}
 ,{"test_date":"2020-03-01T00:00:00.000","county":"Queens","new_positives":"0","cumulative_number_of_positives":"0","total_number_of_tests":"0","cumulative_number_of_tests":"0"}
 ,{"test_date":"2020-03-02T00:00:00.000","county":"Queens","new_positives":"0","cumulative_number_of_positives":"0","total_number_of_tests":"0","cumulative_number_of_tests":"0"}
 ,{"test_date":"2020-03-03T00:00:00.000","county":"Queens","new_positives":"0","cumulative_number_of_positives":"0","total_number_of_tests":"2","cumulative_number_of_tests":"2"}
@@ -994,7 +997,4 @@
 ,{"test_date":"2020-07-23T00:00:00.000","county":"Queens","new_positives":"84","cumulative_number_of_positives":"67458","total_number_of_tests":"8063","cumulative_number_of_tests":"648898"}
 ,{"test_date":"2020-07-24T00:00:00.000","county":"Queens","new_positives":"74","cumulative_number_of_positives":"67532","total_number_of_tests":"7012","cumulative_number_of_tests":"655910"}
 ,{"test_date":"2020-07-25T00:00:00.000","county":"Queens","new_positives":"63","cumulative_number_of_positives":"67595","total_number_of_tests":"4878","cumulative_number_of_tests":"660788"}
-,{"test_date":"2020-07-26T00:00:00.000","county":"Queens","new_positives":"84","cumulative_number_of_positives":"67679","total_number_of_tests":"6560","cumulative_number_of_tests":"667348"}
-,{"test_date":"2020-07-27T00:00:00.000","county":"Queens","new_positives":"60","cumulative_number_of_positives":"67739","total_number_of_tests":"5574","cumulative_number_of_tests":"672922"}
-,{"test_date":"2020-07-28T00:00:00.000","county":"Queens","new_positives":"81","cumulative_number_of_positives":"67820","total_number_of_tests":"7112","cumulative_number_of_tests":"680034"}
-,{"test_date":"2020-07-29T00:00:00.000","county":"Queens","new_positives":"74","cumulative_number_of_positives":"67894","total_number_of_tests":"6889","cumulative_number_of_tests":"686923"}]
+,{"test_date":"2020-07-26T00:00:00.000","county":"Queens","new_positives":"84","cumulative_number_of_positives":"67679","total_number_of_tests":"6560","cumulative_number_of_tests":"667348"}]
