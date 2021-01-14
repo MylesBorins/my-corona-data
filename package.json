@@ -2,7 +2,9 @@
   "name": "my-corona-data",
   "version": "1.0.0",
   "description": "Just looking into data",
-  "main": "index.js",
+  "imports": {
+    "#lib/*": "./lib/*.mjs"
+  },
   "scripts": {
     "start": "node --experimental-modules index.mjs",
     "update-data": "echo update-subtree fetch-toronto-data fetch-state-data | xargs -n1 npm run",

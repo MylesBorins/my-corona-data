@@ -18,8 +18,10 @@ import { print as printNYState } from './new-york-state-data.mjs';
 import { print as printNYCity } from './new-york-city-data.mjs';
 import { print as printToronto } from './toronto-data.mjs';
 import { print as printTorontoManual } from './toronto-data-manual.mjs';
+import { print as printOntario } from './ontario-data.mjs';
 
-printNYState();
-printNYCity();
-printToronto();
+// printNYState();
+// printNYCity();
+// printToronto();
+printOntario();
 printTorontoManual();
