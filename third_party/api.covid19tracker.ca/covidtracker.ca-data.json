@@ -7319,7 +7319,7 @@
    "change_recoveries": 2733,
    "change_vaccinations": 12251,
    "change_vaccines_distributed": 47775,
-   "change_vaccinated": null,
+   "change_vaccinated": 2173,
    "total_cases": 208895,
    "total_fatalities": 4905,
    "total_tests": 8181840,
@@ -7328,7 +7328,7 @@
    "total_recoveries": 177342,
    "total_vaccinations": 72631,
    "total_vaccines_distributed": 196125,
-   "total_vaccinated": null
+   "total_vaccinated": 2173
   },
   {
    "date": "2021-01-08",
@@ -7340,7 +7340,7 @@
    "change_recoveries": 2894,
    "change_vaccinations": 14932,
    "change_vaccines_distributed": 0,
-   "change_vaccinated": null,
+   "change_vaccinated": 1880,
    "total_cases": 213137,
    "total_fatalities": 4995,
    "total_tests": 8253321,
@@ -7349,7 +7349,7 @@
    "total_recoveries": 180236,
    "total_vaccinations": 87563,
    "total_vaccines_distributed": 196125,
-   "total_vaccinated": null
+   "total_vaccinated": 4053
   },
   {
    "date": "2021-01-09",
@@ -7361,7 +7361,7 @@
    "change_recoveries": 2776,
    "change_vaccinations": 15700,
    "change_vaccines_distributed": 0,
-   "change_vaccinated": null,
+   "change_vaccinated": 1827,
    "total_cases": 216850,
    "total_fatalities": 5004,
    "total_tests": 8326221,
@@ -7370,7 +7370,7 @@
    "total_recoveries": 183012,
    "total_vaccinations": 103263,
    "total_vaccines_distributed": 196125,
-   "total_vaccinated": null
+   "total_vaccinated": 5880
   },
   {
    "date": "2021-01-10",
@@ -7382,7 +7382,7 @@
    "change_recoveries": 2432,
    "change_vaccinations": 9983,
    "change_vaccines_distributed": 0,
-   "change_vaccinated": null,
+   "change_vaccinated": 4,
    "total_cases": 220204,
    "total_fatalities": 5031,
    "total_tests": 8388529,
@@ -7391,7 +7391,7 @@
    "total_recoveries": 185444,
    "total_vaccinations": 113246,
    "total_vaccines_distributed": 196125,
-   "total_vaccinated": null
+   "total_vaccinated": 5884
   },
   {
    "date": "2021-01-11",
@@ -7403,7 +7403,7 @@
    "change_recoveries": 3467,
    "change_vaccinations": 8859,
    "change_vaccines_distributed": 0,
-   "change_vaccinated": null,
+   "change_vaccinated": 0,
    "total_cases": 224244,
    "total_fatalities": 5067,
    "total_tests": 8434932,
@@ -7412,7 +7412,7 @@
    "total_recoveries": 188911,
    "total_vaccinations": 122105,
    "total_vaccines_distributed": 196125,
-   "total_vaccinated": null
+   "total_vaccinated": 5884
   },
   {
    "date": "2021-01-12",
@@ -7424,7 +7424,7 @@
    "change_recoveries": 3380,
    "change_vaccinations": 11448,
    "change_vaccines_distributed": 0,
-   "change_vaccinated": 0,
+   "change_vaccinated": 162,
    "total_cases": 226908,
    "total_fatalities": 5139,
    "total_tests": 8479734,
@@ -7433,7 +7433,7 @@
    "total_recoveries": 192291,
    "total_vaccinations": 133553,
    "total_vaccines_distributed": 196125,
-   "total_vaccinated": null
+   "total_vaccinated": 6046
   },
   {
    "date": "2021-01-13",
@@ -7445,7 +7445,7 @@
    "change_recoveries": 3280,
    "change_vaccinations": 11231,
    "change_vaccines_distributed": 80925,
-   "change_vaccinated": 8778,
+   "change_vaccinated": 2732,
    "total_cases": 230203,
    "total_fatalities": 5209,
    "total_tests": 8530665,
@@ -7455,6 +7455,48 @@
    "total_vaccinations": 144784,
    "total_vaccines_distributed": 277050,
    "total_vaccinated": 8778
+  },
+  {
+   "date": "2021-01-14",
+   "change_cases": 3239,
+   "change_fatalities": 59,
+   "change_tests": 71169,
+   "change_hospitalizations": -17,
+   "change_criticals": 3,
+   "change_recoveries": 3450,
+   "change_vaccinations": 14237,
+   "change_vaccines_distributed": 0,
+   "change_vaccinated": 4515,
+   "total_cases": 233442,
+   "total_fatalities": 5268,
+   "total_tests": 8601834,
+   "total_hospitalizations": 1657,
+   "total_criticals": 388,
+   "total_recoveries": 199021,
+   "total_vaccinations": 159021,
+   "total_vaccines_distributed": 277050,
+   "total_vaccinated": 13293
+  },
+  {
+   "date": "2021-01-15",
+   "change_cases": 3100,
+   "change_fatalities": 64,
+   "change_tests": 76472,
+   "change_hospitalizations": -10,
+   "change_criticals": -1,
+   "change_recoveries": 3480,
+   "change_vaccinations": 15609,
+   "change_vaccines_distributed": 0,
+   "change_vaccinated": 3801,
+   "total_cases": 236542,
+   "total_fatalities": 5332,
+   "total_tests": 8678306,
+   "total_hospitalizations": 1647,
+   "total_criticals": 387,
+   "total_recoveries": 202501,
+   "total_vaccinations": 174630,
+   "total_vaccines_distributed": 277050,
+   "total_vaccinated": 17094
   }
  ]
 }
