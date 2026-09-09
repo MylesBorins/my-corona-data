@@ -19,7 +19,7 @@
   "author": "Myles Borins <mylesborins@google.com>",
   "license": "Apache-2.0",
   "dependencies": {
-    "csv-parse": "^4.8.8",
+    "csv-parse": "^7.0.2",
     "node-fetch": "^3.2.10"
   },
   "devDependencies": {
